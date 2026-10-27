@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registro de asistencia</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f0ebf8;font-family:Roboto,Arial,sans-serif;color:#202124;padding:12px 12px 48px}
+.wrap{max-width:640px;margin:0 auto}
+.card{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:24px;margin-top:12px}
+.head{border-top:10px solid #673ab7;padding-top:22px}
+h1{margin:0 0 12px;font-size:32px;font-weight:400}
+.head p{margin:0;font-size:14px;color:#202124}
+.req-note{color:#d93025;font-size:14px;margin-top:12px}
+label.q{display:block;font-size:16px;margin-bottom:14px}
+label.q b{color:#d93025;font-weight:400}
+input{width:100%;border:0;border-bottom:1px solid #dadce0;padding:6px 0;font-size:16px;font-family:inherit;outline:0;background:transparent;border-radius:0}
+input:focus{border-bottom:2px solid #673ab7;padding-bottom:5px}
+.card.err{border-color:#d93025}
+.msg{color:#d93025;font-size:12px;margin-top:8px;display:none}
+.card.err .msg{display:block}
+.actions{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+button{background:#673ab7;color:#fff;border:0;border-radius:4px;padding:10px 24px;font-size:14px;font-weight:500;cursor:pointer}
+button:disabled{opacity:.6}
+#e{color:#d93025;font-size:14px;margin-top:12px}
+.ok{display:none}.ok h1{font-size:24px}
+</style></head><body><div class="wrap">
+<form id="f" novalidate>
+<div class="card head"><h1>Registro de asistencia</h1><p>Complete sus datos para registrar su asistencia a la reunión.</p><div class="req-note">* Indica que la pregunta es obligatoria</div></div>
+<div class="card" data-f="cedula"><label class="q" for="cedula">Cédula <b>*</b></label><input id="cedula" name="cedula" inputmode="numeric" maxlength="10" placeholder="Tu respuesta" autocomplete="off"><div class="msg">Ingrese una cédula de 10 dígitos</div></div>
+<div class="card" data-f="nombres"><label class="q" for="nombres">Nombres completos <b>*</b></label><input id="nombres" name="nombres" autocomplete="name" placeholder="Tu respuesta"><div class="msg">Ingrese sus nombres completos</div></div>
+<div class="card" data-f="local"><label class="q" for="local">Local <b>*</b></label><input id="local" name="local" placeholder="Tu respuesta"><div class="msg">Ingrese su local</div></div>
+<div class="actions"><button id="btn">Enviar</button></div><div id="e"></div>
+</form>
+<div class="card head ok" id="ok"><h1>Registro de asistencia</h1><p>Su asistencia fue registrada. Ya puede cerrar esta página.</p></div>
+</div>
+<script>
+const token=location.hash.slice(1);history.replaceState(null,'','/registro.html');
+const $=(s)=>document.querySelector(s);
+if(!token){document.body.innerHTML='<div class="wrap"><div class="card head"><h1>Escanee el QR</h1><p>Use el código QR de la pantalla de la reunión para registrarse.</p></div></div>'}
+else $('#f').onsubmit=async(ev)=>{
+  ev.preventDefault();$('#e').textContent='';
+  const d=Object.fromEntries(new FormData(ev.target));
+  const bad={cedula:!/^\d{10}$/.test(d.cedula.trim()),nombres:d.nombres.trim().length<5,local:!d.local.trim()};
+  let any=false;
+  for(const k in bad){document.querySelector('[data-f='+k+']').classList.toggle('err',bad[k]);any=any||bad[k]}
+  if(any)return;
+  d.token=token;$('#btn').disabled=true;
+  try{
+    const r=await fetch('/api/registro',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    const j=await r.json();
+    if(j.ok){$('#f').style.display='none';$('#ok').style.display='block'}
+    else{$('#e').textContent=j.error;$('#btn').disabled=false}
+  }catch(x){$('#e').textContent='Sin conexión. Intente de nuevo.';$('#btn').disabled=false}
+};
+</script></body></html>

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: asistencia-qr
+    env: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET
+        generateValue: true
+      - key: ADMIN_KEY
+        generateValue: true
