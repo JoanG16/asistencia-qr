@@ -1,7 +1,6 @@
 async function tick() {
   try {
     const res = await fetch('/api/qr', { cache: 'no-store' });
-    if (res.status === 401) { location.href = '/admin'; return; }
     const r = await res.json();
     document.getElementById('qr').innerHTML = r.svg;
     document.getElementById('c').textContent = 'Registrados: ' + r.count;

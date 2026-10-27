@@ -208,7 +208,12 @@ const priv = (f) => (req, res) => res.set('Cache-Control', 'no-store').sendFile(
 const ah = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
 
 // ---------- Público (asistentes) ----------
-app.get('/', (req, res) => res.redirect('/admin'));
+app.get('/', priv('proyector.html'));
+
+app.get('/api/qr', limit(120, 60 * 1000), ah(async (req, res) => {
+  const [svg, count] = await Promise.all([currentQrSvg(), pool ? pool.query('SELECT count(*) FROM asistencia').then((r) => Number(r.rows[0].count)) : memKeys.size]);
+  res.set('Cache-Control', 'no-store').json({ svg, expiresInMs: ROTATE_MS - (Date.now() % ROTATE_MS), count });
+}));
 
 app.get('/api/locales', (req, res) => res.json({ locales: LOCALES.map((l) => l.nombre).sort((a, b) => a.localeCompare(b)), otro: OTRO }));
 
@@ -271,13 +276,7 @@ app.post('/admin/logout', (req, res) => {
   res.set('Set-Cookie', 'adm=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0').redirect(303, '/admin');
 });
 
-app.get('/admin/proyector', requireAdmin, priv('proyector.html'));
 app.get('/admin/dashboard', requireAdmin, priv('dashboard.html'));
-
-app.get('/api/qr', requireAdmin, ah(async (req, res) => {
-  const [svg, count] = await Promise.all([currentQrSvg(), pool ? pool.query('SELECT count(*) FROM asistencia').then((r) => Number(r.rows[0].count)) : memKeys.size]);
-  res.set('Cache-Control', 'no-store').json({ svg, expiresInMs: ROTATE_MS - (Date.now() % ROTATE_MS), count });
-}));
 
 app.get('/api/stats', requireAdmin, ah(async (req, res) => {
   res.set('Cache-Control', 'no-store').json(buildStats(await getRows()));
