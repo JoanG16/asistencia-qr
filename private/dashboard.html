@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Dashboard de asistencia</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6fa;font-family:system-ui,sans-serif;color:#14213d;padding:20px}
+.wrap{max-width:1100px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+h1{margin:0;font-size:1.5rem}a{color:#2563eb;text-decoration:none}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:20px}
+.k{background:#fff;border-radius:20px;box-shadow:0 4px 18px rgba(20,33,61,.08);padding:20px}
+.k small{color:#5b6577;font-size:.85rem}.k div{font-size:2.2rem;font-weight:700;margin-top:4px}
+.k.g div{color:#15803d}.k.r div{color:#b91c1c}.k.b div{color:#2563eb}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.p{background:#fff;border-radius:20px;box-shadow:0 4px 18px rgba(20,33,61,.08);padding:20px}
+.p h2{margin:0 0 12px;font-size:1.1rem}
+input{width:100%;padding:10px 12px;border:1px solid #d5dbe6;border-radius:12px;font-size:.95rem;margin-bottom:12px}
+ul{list-style:none;margin:0;padding:0;max-height:520px;overflow:auto}
+li{display:flex;justify-content:space-between;gap:8px;padding:10px 4px;border-bottom:1px solid #eef1f6;font-size:.95rem}
+li:last-child{border:0}.ct{color:#5b6577;font-size:.8rem;margin-left:6px}
+.n{background:#dcfce7;color:#15803d;border-radius:999px;padding:2px 12px;font-weight:700;min-width:36px;text-align:center}
+.empty{color:#5b6577;text-align:center;padding:32px 8px}
+.bar{height:10px;background:#e3e8f0;border-radius:6px;overflow:hidden;margin-top:12px}.bar i{display:block;height:100%;background:#2563eb;width:0;transition:width .4s}
+</style></head><body><div class="wrap">
+<header><h1>Dashboard de asistencia</h1><span><a href="/admin">← Menú</a> · <span id="upd">Actualizando…</span></span></header>
+<div class="kpis">
+<div class="k b"><small>Total de asistentes</small><div id="k1">0</div></div>
+<div class="k g"><small>Locales que estuvieron</small><div id="k2">0</div></div>
+<div class="k r"><small>Locales que faltaron</small><div id="k3">0</div></div>
+<div class="k"><small>Participación de locales</small><div id="k4">0%</div><div class="bar"><i id="bar"></i></div></div>
+</div>
+<div class="cols">
+<section class="p"><h2>Locales que estuvieron (asistentes por local)</h2><input id="s1" placeholder="Buscar local"><ul id="l1"></ul></section>
+<section class="p"><h2>Locales que faltaron</h2><input id="s2" placeholder="Buscar local"><ul id="l2"></ul></section>
+</div></div>
+<script src="/dashboard.js"></script>
+</body></html>

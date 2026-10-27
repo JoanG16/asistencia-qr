@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Administración</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f6fa;font-family:system-ui,sans-serif;color:#14213d;padding:16px}
+.box{width:100%;max-width:420px}
+h1{font-size:1.5rem;margin:0 0 16px}
+a.t,button.t{display:block;width:100%;text-align:left;background:#fff;border:0;border-radius:16px;box-shadow:0 4px 18px rgba(20,33,61,.08);padding:18px 20px;margin-bottom:12px;color:inherit;text-decoration:none;font:inherit;cursor:pointer}
+a.t:hover,button.t:hover{box-shadow:0 6px 24px rgba(20,33,61,.16)}
+.t b{display:block;font-size:1.05rem}.t span{color:#5b6577;font-size:.9rem}
+form{margin:0}
+</style></head><body><div class="box">
+<h1>Asistencia a la reunión</h1>
+<a class="t" href="/admin/proyector"><b>Proyectar código QR</b><span>Pantalla con el QR que cambia cada 5 segundos</span></a>
+<a class="t" href="/admin/dashboard"><b>Dashboard</b><span>Asistentes, locales presentes y locales que faltaron</span></a>
+<a class="t" href="/admin/asistencia.xlsx"><b>Descargar Excel</b><span>Fecha, hora de ingreso, nombres y local</span></a>
+<form method="post" action="/admin/logout"><button class="t"><b>Cerrar sesión</b></button></form>
+</div></body></html>

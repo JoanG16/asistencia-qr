@@ -1,0 +1,690 @@
+[
+ {
+  "nombre": "ADRISSA",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "ALESSA S.A.",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "AMERICAN DELI",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "ANTENA CLARO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ARCADE",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "ASCENSORES Y ESCALERAS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "BANCO PICHINCHA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "BANCO_SOLIDARIO_1",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "BANCO_SOLIDARIO_2",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "BASKIN ROBBINS / CINABON",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "BATA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "BEBEMUNDO",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "BRAUN",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "BUBBLE GUMMERS",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "BURGUER KING - RESERVA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "BYD (1)",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "BYD (2)",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CAJUN",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "CALVIN KLEIN",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CANDY",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "CASA RES",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CHAIDE",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CHEVIGNON/7",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "CLARO (1)",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CLARO (2)",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "CNT",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "COLUMBIA",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "COOPERATIVA ANDALUCIA",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "CRECOS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "CROCS",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "D MUJERES BEAUTY MARKET",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "DIPASSO",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "DIPIUR",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "DIPIUR 2",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "DR. PIE",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "DULCE & CREMOSO",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "EL ESPAÑOL",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "ELEGANCE",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "EMPANADA DE PACO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ETAFASHION",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "EX SAMSUNG",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "FAJATE",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "FASHION CLUB -AEROPOSTALE",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "FOTO MAX",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "FUNKY FISH",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "FYBECA (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "FYBECA (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "GAES",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "GLORIA SALTOS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "HEAD",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ISLA COCO EXPRESS",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ISLA GENERALES",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ISLA MUNNAI",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ISLA POO2GO (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "ISLA POO2GO (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "ISLAS GENERALES",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "JAPON",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "JBG - LOTERIA NACIONAL",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "JOYERIA GUILLERMOS BAZQUEZ",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "JOYERIA ZAMVER",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "JUAN VALDEZ",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "JUAN VALDEZ P1 (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "JUAN VALDEZ P1 (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "JUGUETON",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "K-RAMBA BOUTIQUE",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "KAO SPORT CENTER (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "KAO SPORT CENTER (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "KEKALA",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "KFC",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "KOAJ",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "KOBE SUSHI EXPRESS",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "LA TABLITA DEL TARTARO (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "LA TABLITA DEL TARTARO (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "LAS FRAGANCIAS (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "LAS FRAGANCIAS (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "LEE",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "LEVIS",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "LILI PINK",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "LOLA FROM RIO",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "LOS CEBICHES DE LA RUMIÑAHUI",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "LOTERIA NACIONAL -YOU WIN",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MARATHON SPORTS (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "MARATHON SPORTS (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "MARITIM",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MAYFLOWER",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "MEDICITY",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MELANIE ACCESORIOS PB",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MENESTRAS DEL NEGRO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "MIC (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "MIC (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "MINISO",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "MONA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MONTERO (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "MONTERO (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "MOVI",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MOVISTAR",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MR. BOOKS",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MUNDO MAGICO DE LA MASCOTA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "MUTUALISTA PICHINCHA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "NAF NAF",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "NATURA VITALITY",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "NOVICOMPU",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "OFICINA 1 SUBSUELO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ONLY NATURAL",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "OPTICA LOS ANDES",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "OPTICA LOS ANDES KIDS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "OPTICAS GMO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "OPTIMODA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "ORANGE BOUTIQUE",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "OSBO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "OTECEL",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PANDORA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PANTALLA CENTRAL - CIRCULO",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "PANTALLAS",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PASA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PATPRIMO",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "PAYLESS SHOESOURCE (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "PAYLESS SHOESOURCE (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "PET STATION",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "PHARMACYS (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "PHARMACYS (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "PINTO (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "PINTO (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "PIZZA HUT - PATIO COMIDA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PIZZA HUT - PB",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "POLIPAPEL",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "POP2GO (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "POP2GO (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "PRODUBANCO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "PYCCA",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "QUICKSILVER DC",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "RB - RETAIL BRANDS",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "REGISTRO DE LA PROPIEDAD",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "RESERVA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "RM",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "ROLAND",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "ROMEO JOYERIA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "SECURITY DATA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "SERVICIOS GENERALES - C.C.",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "SEVEN",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "SIME - USFQ (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "SIME - USFQ (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "SKECHERS",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "SMART BUY",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "SMART FIT",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "SPYCHO BUNNY",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "SS GG",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "SUPER ÉXITO",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "SUPER PACO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "SWEET & COFFEE",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "SYF",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "TATY BOUTIQUE",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "TELEFONICA",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "TENNIS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "THE ATHLETE'S FOOT",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "TODO HOGAR",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "TOFFEE ICE CREAM",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "TOMMY HILFIGIER",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "TOTTO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "TROPIBURGUER",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "TUTTO FREDDO, NICE CREAM Y YOGURT",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "TVENTAS",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "UOMO VENETTO",
+  "ct": "CT1"
+ },
+ {
+  "nombre": "US POLO",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "VASARY & MOZIONI",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "VCOOL",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "WAIKIKI",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "WAIKIKI - AIRES (CT3)",
+  "ct": "CT3"
+ },
+ {
+  "nombre": "WAIKIKI - AIRES (CT4)",
+  "ct": "CT4"
+ },
+ {
+  "nombre": "WELDERMAN",
+  "ct": "CT5"
+ },
+ {
+  "nombre": "WESTERN UNION / RED ACTIVA",
+  "ct": "CT2"
+ },
+ {
+  "nombre": "XIAOMI",
+  "ct": "CT2"
+ }
+]
