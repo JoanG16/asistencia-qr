@@ -1,14 +1,22 @@
+databases:
+  - name: asistencia-db
+    plan: free
+    databaseName: asistencia
+    user: asistencia
+
 services:
   - type: web
     name: asistencia-qr
-    env: node
+    runtime: node
     plan: free
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: asistencia-db
+          property: connectionString
       - key: SECRET
         generateValue: true
       - key: ADMIN_KEY
