@@ -227,7 +227,7 @@ app.get('/s/:tok', (req, res) => {
 });
 
 const NAME_RE = /^[\p{L}\p{M}][\p{L}\p{M}'. -]{3,98}[\p{L}\p{M}.]$/u;
-app.post('/api/registro', limit(300, 10 * 60 * 1000), async (req, res) => {
+app.post('/api/registro', limit(5000, 10 * 60 * 1000), async (req, res) => {
   try {
     const { token, nombres, local } = req.body || {};
     if (typeof token !== 'string' || !checkFormToken(token)) {
