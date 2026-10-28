@@ -327,16 +327,6 @@ app.get('/admin/asistencia.xlsx', requireAdmin, ah(async (req, res) => {
   res.end();
 }));
 
-// TEMPORAL: prueba de carga (se elimina después)
-app.get('/admin/_lt/tokens', requireAdmin, (req, res) => {
-  const n = Math.min(Number(req.query.n) || 1, 1000);
-  res.json(Array.from({ length: n }, newFormToken));
-});
-app.post('/admin/_lt/cleanup', requireAdmin, ah(async (req, res) => {
-  const r = await pool.query("DELETE FROM asistencia WHERE nombres LIKE 'Zztest %'");
-  res.json({ borrados: r.rowCount });
-}));
-
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: 'Error del servidor.' });
