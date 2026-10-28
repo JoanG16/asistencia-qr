@@ -14,11 +14,13 @@ const ROTATE_MS = 5000;
 const GRACE_WINDOWS = 1; // acepta el QR actual y el anterior (red lenta)
 const FORM_TTL_MS = 3 * 60 * 1000;
 const SESSION_MS = 12 * 3600 * 1000;
-const OTRO = 'OTRO (fuera de la lista)';
 const CSV = path.join(__dirname, 'asistencia.csv');
 
 const LOCALES = JSON.parse(fs.readFileSync(path.join(__dirname, 'locales.json'), 'utf8'));
 const LOCAL_BY_KEY = new Map(LOCALES.map((l) => [l.nombre.toUpperCase(), l]));
+const foldKey = (s) => String(s).normalize('NFD').replace(/\p{M}/gu, '').replace(/['’`]/g, '').toUpperCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+const LOCAL_BY_FOLD = new Map(LOCALES.map((l) => [foldKey(l.nombre), l]));
+const LOCAL_RE = /^[\p{L}\p{N}][\p{L}\p{N} &'.,()\/_-]{0,58}$/u;
 
 const sign = (s) => crypto.createHmac('sha256', SECRET).update(s).digest('base64url').slice(0, 22);
 const safeEq = (a, b) => {
@@ -215,7 +217,7 @@ app.get('/api/qr', limit(120, 60 * 1000), ah(async (req, res) => {
   res.set('Cache-Control', 'no-store').json({ svg, expiresInMs: ROTATE_MS - (Date.now() % ROTATE_MS), count });
 }));
 
-app.get('/api/locales', (req, res) => res.json({ locales: LOCALES.map((l) => l.nombre).sort((a, b) => a.localeCompare(b)), otro: OTRO }));
+app.get('/api/locales', (req, res) => res.json({ locales: LOCALES.map((l) => l.nombre).sort((a, b) => a.localeCompare(b)) }));
 
 // Escaneo: valida token y redirige al formulario con token propio de un solo uso
 app.get('/s/:tok', (req, res) => {
@@ -232,10 +234,11 @@ app.post('/api/registro', limit(300, 10 * 60 * 1000), async (req, res) => {
       return res.status(403).json({ error: 'Enlace vencido o ya usado. Escanee el QR de nuevo.' });
     }
     const nom = String(nombres || '').trim().replace(/\s+/g, ' ');
-    const found = LOCAL_BY_KEY.get(String(local || '').trim().toUpperCase());
-    const loc = found ? found.nombre : String(local) === OTRO ? OTRO : null;
+    const typed = String(local || '').trim().replace(/\s+/g, ' ');
+    const found = LOCAL_BY_FOLD.get(foldKey(typed));
+    const loc = found ? found.nombre : LOCAL_RE.test(typed) ? typed.toUpperCase() : null;
     if (!NAME_RE.test(nom) || !nom.includes(' ') || !loc) {
-      return res.status(400).json({ error: 'Datos inválidos. Escriba sus nombres completos (solo letras) y elija su local.' });
+      return res.status(400).json({ error: 'Datos inválidos. Escriba sus nombres completos (solo letras) y el nombre de su local.' });
     }
     const r = await saveRecord(token.split('.')[0], nom, loc);
     if (r === 'used') return res.status(403).json({ error: 'Enlace vencido o ya usado. Escanee el QR de nuevo.' });

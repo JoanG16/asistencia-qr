@@ -5,15 +5,15 @@ const $ = (s) => document.querySelector(s);
 if (!token) {
   document.body.innerHTML = '<div class="wrap"><div class="card head"><h1>Escanee el QR</h1><p>Use el código QR de la pantalla de la reunión para registrarse.</p></div></div>';
 } else {
-  fetch('/api/locales').then((r) => r.json()).then(({ locales, otro }) => {
-    const sel = $('#local');
-    [...locales, otro].forEach((l) => { const o = document.createElement('option'); o.value = l; o.textContent = l; sel.appendChild(o); });
+  fetch('/api/locales').then((r) => r.json()).then(({ locales }) => {
+    const dl = $('#locales');
+    locales.forEach((l) => { const o = document.createElement('option'); o.value = l; dl.appendChild(o); });
   });
   $('#f').onsubmit = async (ev) => {
     ev.preventDefault();
     $('#e').textContent = '';
     const d = Object.fromEntries(new FormData(ev.target));
-    const bad = { nombres: d.nombres.trim().split(/\s+/).length < 2 || d.nombres.trim().length < 5, local: !d.local };
+    const bad = { nombres: d.nombres.trim().split(/\s+/).length < 2 || d.nombres.trim().length < 5, local: d.local.trim().length < 2 };
     let any = false;
     for (const k in bad) { document.querySelector('[data-f=' + k + ']').classList.toggle('err', bad[k]); any = any || bad[k]; }
     if (any) return;

@@ -7,13 +7,13 @@ body{margin:0;background:#f0ebf8;font-family:Roboto,Arial,sans-serif;color:#2021
 .wrap{max-width:640px;margin:0 auto}
 .card{background:#fff;border:1px solid #dadce0;border-radius:8px;padding:24px;margin-top:12px}
 .head{border-top:10px solid #673ab7;padding-top:22px}
-h1{margin:0 0 12px;font-size:32px;font-weight:400}
+h1{margin:0 0 12px;font-size:clamp(1.5rem,6vw,2rem);font-weight:400}
 .head p{margin:0;font-size:14px}
 .req-note{color:#d93025;font-size:14px;margin-top:12px}
 label.q{display:block;font-size:16px;margin-bottom:14px}
 label.q b{color:#d93025;font-weight:400}
-input,select{width:100%;border:0;border-bottom:1px solid #dadce0;padding:8px 0;font-size:16px;font-family:inherit;outline:0;background:transparent;border-radius:0;color:#202124}
-input:focus,select:focus{border-bottom:2px solid #673ab7;padding-bottom:7px}
+input,select{width:100%;border:0;border-bottom:1px solid #dadce0;padding:10px 0;font-size:16px;font-family:inherit;outline:0;background:transparent;border-radius:0;color:#202124}
+input:focus,select:focus{border-bottom:2px solid #673ab7;padding-bottom:9px}
 .card.err{border-color:#d93025}
 .msg{color:#d93025;font-size:12px;margin-top:8px;display:none}
 .card.err .msg{display:block}
@@ -26,7 +26,7 @@ button:disabled{opacity:.6}
 <form id="f" novalidate>
 <div class="card head"><h1>Registro de asistencia</h1><p>Complete sus datos para registrar su asistencia. La fecha y la hora de ingreso se registran automáticamente.</p><div class="req-note">* Indica que la pregunta es obligatoria</div></div>
 <div class="card" data-f="nombres"><label class="q" for="nombres">Nombres completos <b>*</b></label><input id="nombres" name="nombres" autocomplete="name" placeholder="Tu respuesta" maxlength="100"><div class="msg">Escriba sus nombres y apellidos (solo letras)</div></div>
-<div class="card" data-f="local"><label class="q" for="local">Local <b>*</b></label><select id="local" name="local"><option value="">Elegir</option></select><div class="msg">Elija su local</div></div>
+<div class="card" data-f="local"><label class="q" for="local">Local <b>*</b></label><input id="local" name="local" list="locales" autocomplete="off" autocapitalize="characters" placeholder="Escriba el nombre de su local" maxlength="60"><datalist id="locales"></datalist><div class="msg">Escriba el nombre de su local</div></div>
 <div class="actions"><button id="btn">Enviar</button></div><div id="e"></div>
 </form>
 <div class="card head ok" id="ok"><h1>Registro de asistencia</h1><p>Su asistencia fue registrada. Ya puede cerrar esta página.</p></div>
