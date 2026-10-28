@@ -127,7 +127,7 @@ async function getRows() {
 async function saveRecord(tokenId, nom, loc) {
   const clave = normName(nom) + '|' + loc;
   if (!pool) {
-    if (usedForms.has(tokenId)) return 'used';
+    if (usedForms.has(tokenId)) return memKeys.has(clave) ? 'ok' : 'used';
     if (memKeys.has(clave)) return 'dup';
     usedForms.add(tokenId);
     memKeys.add(clave);
@@ -138,7 +138,12 @@ async function saveRecord(tokenId, nom, loc) {
   try {
     await client.query('BEGIN');
     const t = await client.query('INSERT INTO asistencia_tokens(id) VALUES($1) ON CONFLICT DO NOTHING RETURNING id', [tokenId]);
-    if (!t.rowCount) { await client.query('ROLLBACK'); return 'used'; }
+    if (!t.rowCount) {
+      await client.query('ROLLBACK');
+      // reintento del mismo envío cuya respuesta se perdió: ya está guardado
+      const e = await client.query('SELECT 1 FROM asistencia WHERE clave=$1', [clave]);
+      return e.rowCount ? 'ok' : 'used';
+    }
     const r = await client.query(
       'INSERT INTO asistencia(nombres,local,clave) VALUES($1,$2,$3) ON CONFLICT (clave) DO NOTHING RETURNING id',
       [nom, loc, clave]);

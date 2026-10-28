@@ -19,11 +19,22 @@ if (!token) {
     if (any) return;
     d.token = token;
     $('#btn').disabled = true;
-    try {
-      const r = await fetch('/api/registro', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
-      const j = await r.json();
-      if (j.ok) { $('#f').style.display = 'none'; $('#ok').style.display = 'block'; }
-      else { $('#e').textContent = j.error; $('#btn').disabled = false; }
-    } catch (x) { $('#e').textContent = 'Sin conexión. Intente de nuevo.'; $('#btn').disabled = false; }
+    $('#btn').textContent = 'Enviando…';
+    const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    let done = false;
+    for (let i = 0; i < 6 && !done; i++) {
+      try {
+        const r = await fetch('/api/registro', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) });
+        if (r.status >= 500 || r.status === 429) throw new Error('retry');
+        const j = await r.json();
+        done = true;
+        if (j.ok) { $('#f').style.display = 'none'; $('#ok').style.display = 'block'; }
+        else { $('#e').textContent = j.error; $('#btn').disabled = false; $('#btn').textContent = 'Enviar'; }
+      } catch (x) {
+        $('#e').textContent = 'Reintentando envío… no cierre esta página.';
+        await wait(1500 * (i + 1));
+      }
+    }
+    if (!done) { $('#e').textContent = 'No se pudo enviar. Revise su señal y pulse Enviar de nuevo.'; $('#btn').disabled = false; $('#btn').textContent = 'Enviar'; }
   };
 }
